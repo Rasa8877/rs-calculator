@@ -34,7 +34,9 @@ def show_help():
         "How to use (In order):\n"
         " number 1, number 2, operator\n"
         "Operators supported: +, -, *, x, /, //, %, **, ^\n"
+        "https://github.com/Rasa8877/rs-calculator\n"
+        "Contact me: letperhut@gmail.com\n"
         "RS Calculator - simplest calculator library in Python!"
     )
 
-__version__ = "0.1.1"
+__version__ = "0.1.11"

@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="rs_calculator",
-    version="0.1.1",
+    version="0.1.11",
     description="A simple calculator library for python beginners",
     long_description=open("README.md", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
