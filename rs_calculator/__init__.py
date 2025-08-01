@@ -56,4 +56,4 @@ def show_help():
         "RS Calculator - simplest calculator library in Python!"
     )
 
-__version__ = "0.2.1"
+__version__ = "0.2.2"

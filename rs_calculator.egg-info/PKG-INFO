@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: rs_calculator
-Version: 0.2.1
+Version: 0.2.2
 Summary: A simple calculator library for Python beginners
 Home-page: https://github.com/Rasa8877/rs-calculator
 Author: Rasa Dariush
@@ -20,68 +20,77 @@ Dynamic: home-page
 Dynamic: license-file
 Dynamic: requires-python
 
-# RS Calculator
+# 📐 RS Calculator
 
-**RS Calculator** is a simple and beginner-friendly calculator library for Python.
-Perfect for new coders learning how to build and use Python modules!
+RS Calculator is the simplest calculator library in Python!  
+It lets you evaluate complex math expressions **safely**, with support for variables and all basic math operators.
 
-## ✨ Features
+---
 
-* Easy-to-use `calculate()` function
-* Accepts full expressions like `"2 + 3 * (4 - 1)"`
-* Supports common math operators: `+`, `-`, `*`, `x`, `/`, `//`, `%`, `**`, `^`
-* Handles parentheses and multiple operators
-* Handles division by zero and invalid input safely
-* Beginner-friendly `show_help()` for quick guidance
-* Supports alias import as `import rs_calculator as rsc` for convenience
-
-## 🚀 Installation
+## 🔧 Installation
 
 ```bash
-pip install rs-calculator
-```
+pip install rs_calculator
+````
 
-## 🧮 Usage
+---
+
+## 🚀 Quick Start
 
 ```python
 import rs_calculator as rsc
 
-# Simple math
-print(rsc.calculate("2 + 3 * 4"))       # 14
-print(rsc.calculate("10 / (2 + 3)"))    # 2.0
-print(rsc.calculate("5 ^ 2 + 10"))      # 35
-
-# Division by zero
-print(rsc.calculate("10 / 0"))          # Error: Division by zero
-
-# Help message
-rsc.show_help()
+print(rsc.calculate("2 + 3 * (4 - 1)"))  # ➜ 11
+print(rsc.calculate("5 ^ 2 + 10"))      # ➜ 35
 ```
 
-## 📚 Supported Operators
+You can also assign variables:
 
-| Symbol    | Meaning        |
-| --------- | -------------- |
-| `+`       | Addition       |
-| `-`       | Subtraction    |
-| `*`, `x`  | Multiplication |
-| `/`       | Division       |
-| `//`      | Floor Division |
-| `%`       | Modulo         |
-| `**`, `^` | Power          |
-| `()`      | Grouping       |
+```python
+rsc.assign_var("a", 10)
+rsc.assign_var("b", 20)
+rsc.assign_var("c", 10)
 
-## 🔒 Safety
+print(rsc.calculate("a + b - c"))     # ➜ 20
+print(rsc.calculate("(a + b) - c"))   # ➜ 20
+```
 
-The `calculate()` function uses safe evaluation.
-It only accepts numbers, operators, parentheses, and spaces.
-Any expression containing unsafe characters will be rejected.
+---
 
-## 🛠️ License
+## ✅ Supported Features
 
-MIT License
+* Operators: `+`, `-`, `*`, `x`, `/`, `//`, `%`, `**`, `^`
+* Parentheses for grouping
+* Variables using `assign_var(name, value)`
+* Safe evaluation (using `asteval`)
+* Simple API
 
-## 📬 Contact
+---
 
-GitHub: [https://github.com/Rasa8877/rs-calculator](https://github.com/Rasa8877/rs-calculator)
-Email: [letperhut@gmail.com](mailto:letperhut@gmail.com)
+## 📘 Usage Reference
+
+```python
+rsc.calculate(expression: str) -> float | str
+```
+
+```python
+rsc.assign_var(name: str, value: float | int)
+```
+
+```python
+rsc.show_help()  # Prints usage instructions
+```
+
+---
+
+## 🌐 Links
+
+* [GitHub Repo](https://github.com/Rasa8877/rs-calculator)
+* Contact: [letperhut@gmail.com](mailto:letperhut@gmail.com)
+
+---
+
+## 🧠 Author
+
+Made with ❤️ by Rasa8877
+RS Calculator — simplest calculator library in Python!
