@@ -71,4 +71,8 @@ rsc.show_help()  # Prints usage instructions
 ## 🧠 Author
 
 Made with ❤️ by Rasa8877
+<<<<<<< HEAD
 RS Calculator — simplest calculator library in Python!
+=======
+RS Calculator — simplest calculator library in Python!
+>>>>>>> c2096c8d1e6195ca2a0319629d7db465f96b558a
