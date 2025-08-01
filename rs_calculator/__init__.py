@@ -1,42 +1,43 @@
-# rs_calculator/__init__.py
+import re
+from asteval import Interpreter
 
-def calculate(num1, num2, operator):
-    if operator == "x":
-        operator = "*"
-    elif operator == "^":
-        operator = "**"
+safe_eval = Interpreter()
 
-    if operator == "+":
-        return num1 + num2
-    elif operator == "-":
-        return num1 - num2
-    elif operator == "*":
-        return num1 * num2
-    elif operator == "/":
-        if num2 == 0:
-            return "Error: Division by zero"
-        return num1 / num2
-    elif operator == "**":
-        return num1 ** num2
-    elif operator == "%":
-        if num2 == 0:
-            return "Error: Modulo by zero"
-        return num1 % num2
-    elif operator == "//":
-        if num2 == 0:
-            return "Error: Integer division by zero"
-        return num1 // num2
-    else:
-        return "Invalid operator"
+def calculate(expression):
+    """
+    Safely evaluate a mathematical expression string.
+    Supports +, -, *, /, //, %, **, parentheses, and multiple numbers.
+    """
+    expression = expression.replace("x", "*").replace("^", "**")
+
+    if not re.fullmatch(r"[0-9+\-*/%^().\s]+", expression):
+        return "Error: Invalid characters in expression"
+
+    try:
+        result = safe_eval(expression)
+        if safe_eval.error:
+            # Clear errors for next call
+            safe_eval.error = []
+            return "Error: Invalid expression"
+        return result
+    except ZeroDivisionError:
+        return "Error: Division by zero"
+    except Exception:
+        return "Error: Invalid expression"
+
 
 def show_help():
     print(
-        "How to use (In order):\n"
-        " number 1, number 2, operator\n"
-        "Operators supported: +, -, *, x, /, //, %, **, ^\n"
+        "How to use:\n"
+        " Pass a math expression as a string to rs_calculator.calculate()\n"
+        "Examples:\n"
+        ' calculate(\"2 + 3 * (4 - 1)\")\n'
+        ' calculate(\"5 ^ 2 + 10\")\n\n'
+        "Supported operators: +, -, *, x, /, //, %, **, ^, ()\n"
+        "Supports parentheses and complex expressions\n"
         "https://github.com/Rasa8877/rs-calculator\n"
         "Contact me: letperhut@gmail.com\n"
         "RS Calculator - simplest calculator library in Python!"
     )
 
-__version__ = "0.1.11"
+__version__ = "0.2.0"
