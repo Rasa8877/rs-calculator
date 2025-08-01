@@ -1,39 +1,39 @@
-````markdown
 # RS Calculator
 
-**RS Calculator** is a simple and beginner-friendly calculator library for Python.  
+**RS Calculator** is a simple and beginner-friendly calculator library for Python.
 Perfect for new coders learning how to build and use Python modules!
 
 ## ✨ Features
 
-- Easy-to-use `calculate()` function
-- Accepts full expressions like `"2 + 3 * (4 - 1)"`
-- Supports common math operators: `+`, `-`, `*`, `x`, `/`, `//`, `%`, `**`, `^`
-- Handles parentheses and multiple operators
-- Handles division by zero and invalid input safely
-- Beginner-friendly `show_help()` for quick guidance
+* Easy-to-use `calculate()` function
+* Accepts full expressions like `"2 + 3 * (4 - 1)"`
+* Supports common math operators: `+`, `-`, `*`, `x`, `/`, `//`, `%`, `**`, `^`
+* Handles parentheses and multiple operators
+* Handles division by zero and invalid input safely
+* Beginner-friendly `show_help()` for quick guidance
+* Supports alias import as `import rs_calculator as rsc` for convenience
 
 ## 🚀 Installation
 
 ```bash
 pip install rs-calculator
-````
+```
 
 ## 🧮 Usage
 
 ```python
-from rs_calculator import calculate, show_help
+import rs_calculator as rsc
 
 # Simple math
-print(calculate("2 + 3 * 4"))       # 14
-print(calculate("10 / (2 + 3)"))    # 2.0
-print(calculate("5 ^ 2 + 10"))      # 35
+print(rsc.calculate("2 + 3 * 4"))       # 14
+print(rsc.calculate("10 / (2 + 3)"))    # 2.0
+print(rsc.calculate("5 ^ 2 + 10"))      # 35
 
 # Division by zero
-print(calculate("10 / 0"))          # Error: Division by zero
+print(rsc.calculate("10 / 0"))          # Error: Division by zero
 
 # Help message
-show_help()
+rsc.show_help()
 ```
 
 ## 📚 Supported Operators

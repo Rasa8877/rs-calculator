@@ -1,6 +1,6 @@
 [project]
 name = "rs_calculator"
-version = "0.2.0"
+version = "0.2.1"
 description = "A simple calculator library for Python beginners"
 readme = "README.md"
 authors = [
