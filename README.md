@@ -1,22 +1,30 @@
-# 📐 RS Calculator
+# 📐 RSC (Really Simple Calculator)
 
-RS Calculator is the simplest calculator library in Python!  
+RSC is the simplest calculator library in Python!  
 It lets you evaluate complex math expressions **safely**, with support for variables and all basic math operators.
+
+Version: **0.2.4** – *Fixed the bugs*
 
 ---
 
 ## 🔧 Installation
 
 ```bash
-pip install rs_calculator
-````
+pip install rsc
+```
+
+or
+
+```bash
+pip install rsc==0.2.4
+```
 
 ---
 
 ## 🚀 Quick Start
 
 ```python
-import rs_calculator as rsc
+import rsc
 
 print(rsc.calculate("2 + 3 * (4 - 1)"))  # ➜ 11
 print(rsc.calculate("5 ^ 2 + 10"))      # ➜ 35
@@ -70,9 +78,5 @@ rsc.show_help()  # Prints usage instructions
 
 ## 🧠 Author
 
-Made with ❤️ by Rasa8877
-<<<<<<< HEAD
-RS Calculator — simplest calculator library in Python!
-=======
-RS Calculator — simplest calculator library in Python!
->>>>>>> c2096c8d1e6195ca2a0319629d7db465f96b558a
+Made with ❤️ by Rasa8877  
+RSC — the simplest calculator library in Python!

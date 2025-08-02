@@ -1,7 +1,6 @@
 import re
 from asteval import Interpreter
 
-# Safe evaluator with a custom symbol table
 symbol_table = {}
 safe_eval = Interpreter(symtable=symbol_table)
 
@@ -19,17 +18,13 @@ def calculate(expression):
     Safely evaluate a mathematical expression string.
     Supports variables, +, -, *, /, //, %, **, parentheses, and more.
     """
-    # Normalize shorthand operators
     expression = expression.replace("x", "*").replace("^", "**")
-
-    # Allow variables in expression, so skip full character check
     if not re.fullmatch(r"[0-9a-zA-Z_+\-*/%^().\s]+", expression):
         return "Error: Invalid characters in expression"
-
     try:
         result = safe_eval(expression)
         if safe_eval.error:
-            safe_eval.error = []  # Clear errors for next call
+            safe_eval.error = []
             return "Error: Invalid expression"
         return result
     except ZeroDivisionError:
@@ -40,7 +35,7 @@ def calculate(expression):
 def show_help():
     print(
         "How to use:\n"
-        " Import with: import rs_calculator as rsc\n"
+        " Import with: import rsc\n"
         " Use rsc.calculate(expression) for math\n"
         " Assign variables using rsc.assign_var(name, value)\n\n"
         "Examples:\n"
@@ -53,7 +48,8 @@ def show_help():
         "Supports parentheses, variables, and complex expressions\n"
         "https://github.com/Rasa8877/rs-calculator\n"
         "Contact me: letperhut@gmail.com\n"
-        "RS Calculator - simplest calculator library in Python!"
+        "RSC — the simplest calculator library in Python!"
     )
 
-__version__ = "0.2.2"
+__version__ = "0.2.4"
+__all__ = ["assign_var", "calculate", "show_help"]
