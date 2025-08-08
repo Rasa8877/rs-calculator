@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "rsc"
-version = "0.2.4"
+version = "0.3.2"
 description = "The simplest calculator library in Python with variable support"
 readme = "README.md"
 requires-python = ">=3.6"
@@ -23,4 +23,4 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/Rasa8877/rs-calculator"
+Homepage = "https://github.com/Rasa8877/rs-calculator-rsc"

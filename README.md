@@ -3,7 +3,7 @@
 RSC is the simplest calculator library in Python!  
 It lets you evaluate complex math expressions **safely**, with support for variables and all basic math operators.
 
-Version: **0.2.4** – *Fixed the bugs*
+Version: **0.3.2** – *Improved API with setv() and calc()*
 
 ---
 
@@ -11,12 +11,11 @@ Version: **0.2.4** – *Fixed the bugs*
 
 ```bash
 pip install rsc
-```
 
 or
 
 ```bash
-pip install rsc==0.2.4
+pip install rsc==0.3.2
 ```
 
 ---
@@ -26,19 +25,19 @@ pip install rsc==0.2.4
 ```python
 import rsc
 
-print(rsc.calculate("2 + 3 * (4 - 1)"))  # ➜ 11
-print(rsc.calculate("5 ^ 2 + 10"))      # ➜ 35
+print(rsc.calc("2 + 3 * (4 - 1)"))  # ➜ 11
+print(rsc.calc("5 ^ 2 + 10"))       # ➜ 35
 ```
 
 You can also assign variables:
 
 ```python
-rsc.assign_var("a", 10)
-rsc.assign_var("b", 20)
-rsc.assign_var("c", 10)
+rsc.setv("a", 10)
+rsc.setv("b", 20)
+rsc.setv("c", 10)
 
-print(rsc.calculate("a + b - c"))     # ➜ 20
-print(rsc.calculate("(a + b) - c"))   # ➜ 20
+print(rsc.calc("a + b - c"))     # ➜ 20
+print(rsc.calc("(a + b) - c"))   # ➜ 20
 ```
 
 ---
@@ -47,7 +46,7 @@ print(rsc.calculate("(a + b) - c"))   # ➜ 20
 
 * Operators: `+`, `-`, `*`, `x`, `/`, `//`, `%`, `**`, `^`
 * Parentheses for grouping
-* Variables using `assign_var(name, value)`
+* Variables using `setv(name, value)`
 * Safe evaluation (using `asteval`)
 * Simple API
 
@@ -56,11 +55,11 @@ print(rsc.calculate("(a + b) - c"))   # ➜ 20
 ## 📘 Usage Reference
 
 ```python
-rsc.calculate(expression: str) -> float | str
+rsc.calc(expression: str) -> float | str
 ```
 
 ```python
-rsc.assign_var(name: str, value: float | int)
+rsc.setv(name: str, value: float | int)
 ```
 
 ```python
@@ -71,12 +70,12 @@ rsc.show_help()  # Prints usage instructions
 
 ## 🌐 Links
 
-* [GitHub Repo](https://github.com/Rasa8877/rs-calculator)
+* [GitHub Repo](https://github.com/Rasa8877/rs-calculator-rsc)
 * Contact: [letperhut@gmail.com](mailto:letperhut@gmail.com)
 
 ---
 
 ## 🧠 Author
 
-Made with ❤️ by Rasa8877  
+Made with ❤️ by Rasa8877
 RSC — the simplest calculator library in Python!
